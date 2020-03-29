@@ -37,10 +37,31 @@ function checkPattern()
 checkPattern $emailid $emailPattern
 
 #checking pattern for mobile format
-read -p "Enter Mobile No:" mobile
-if [[ $mobile =~  $VALIDMOBILENO ]]
-then
-	echo "Your mobile no is valid"
-else
-	echo "Your mobile no is not valid"
-fi
+mobilePattern="^[0-9]{2}[ ]{1}[0-9]{10}"
+read -p "enter mobile number:" mobileNumber
+
+function checkMobilePattern()
+{
+	if [[ $mobileNumber =~ $mobilePattern ]]
+	then
+		echo "valid number:"
+	else
+		echo "Invalid number"
+	fi
+}
+checkMobilePattern 
+
+# checking minimum 8 character password
+passwordPattern="^[a-z]{8,}"
+read -p "enter a password:" password
+
+function validatePassword()
+{
+	if [[ ${#password} -ge 8 && $password =~ $passwordPattern ]]
+	then
+		echo "valid password:"
+	else
+		echo "invalid password:"
+	fi
+}
+validatePassword
