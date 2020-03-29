@@ -5,6 +5,7 @@ echo "****user registration **** "
 
 pattern="^[A-Z][a-z]{2,}$"
 read -p "enter a first name:" firstName
+read -p "enter a last name:" lastName
 function checkPattern()
 {
 	local userName=$1 Pattern=$2
@@ -16,4 +17,4 @@ function checkPattern()
 	fi
 }
 checkPattern $firstName $pattern
-
+checkPattern $lastName $pattern
