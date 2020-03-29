@@ -65,3 +65,18 @@ function validatePassword()
 	fi
 }
 validatePassword
+
+#checking password Contains at least one UpperCase
+password_At_List_one_Upper_Case="^[a-zA-Z0-9]*(.*[A-Z].*{1}+)[a-zA-Z0-9]*{7,40}$"
+read -p "enter a password:" password
+
+function validatePassword()
+{
+        if [[ $1 =~ $2 ]]
+        then
+                echo "valid password:"
+        else
+                echo "invalid password:"
+        fi
+}
+validatePassword $password $password_At_List_one_Upper_Case
