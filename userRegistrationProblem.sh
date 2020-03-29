@@ -36,3 +36,11 @@ function checkPattern()
 }
 checkPattern $emailid $emailPattern
 
+#checking pattern for mobile format
+read -p "Enter Mobile No:" mobile
+if [[ $mobile =~  $VALIDMOBILENO ]]
+then
+	echo "Your mobile no is valid"
+else
+	echo "Your mobile no is not valid"
+fi
