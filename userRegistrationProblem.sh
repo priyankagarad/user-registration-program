@@ -21,7 +21,12 @@ checkPattern $firstName $pattern
 checkPattern $lastName $pattern
 
 #check email pattern
+emailPattern1="^[a-zA-Z0-9]{3,}+[@]{1}$"
+emailPattern2="^[a-zA-Z0-9]{3,}+[@]{1}[a-zA-Z0-9]{3,}$"
+emailPattern3="^[a-zA-Z0-9]{3,}+[@]{1}[a-zA-Z0-9]{3,}+[.][a-zA-Z]{3,}$"
+emailPattern4="^[a-zA-Z0-9]{3,}+[@][a-zA-Z0-9]{3,}+[.][a-zA-Z]{3,}$"
 emailPattern="^[a-zA-Z]{1,}([.]?[a-zA-Z]{1,})?[@]{1}[a-zA-Z]{1,}[.]{1}[a-z]{2}([.]?[a-z]{2})?$"
+
 read -p "enter a email adress:" emailid
 
 function checkPattern()
@@ -108,3 +113,4 @@ function passwordValidate()
         fi
 }
 passwordValidate
+
