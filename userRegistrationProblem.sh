@@ -96,3 +96,15 @@ function validatePassword()
 }
 validatePassword
 
+#checking password contains exactly one special character
+function passwordValidate()
+{
+        read -p "enter password:" password
+        if [[ ${#password} -ge 8 && "$password" =~ *[[:lower:]]* && "$password" =~ *[[:upper:]]* && "$password" =~ *[[0-9]]*  && "$password" =~ *['!'@#\$%^\&*()_+]* ]]
+        then
+                echo "valid password"
+        else
+                echo "invalid password"
+        fi
+}
+passwordValidate
